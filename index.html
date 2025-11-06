@@ -3,67 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Joseph - Developer</title>
+    <title>Success Joseph - Developer Portfolio</title>
     <style>
+        /* --- Basic Setup --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #e0e0e0;
+            background-color: rgba(18, 18, 18, 0.95); /* 95% opaque dark overlay */            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        html {
+            background: url('matrix.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+        
+        /* --- Header / Nav --- */
+        header {
+            background: #1c1c1c;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+        }
+        nav ul {
+            list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
-        .container {
-            max-width: 800px;
+        nav ul li {
+            margin-left: 25px;
+        }
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 60px 0;
+        }
+        section h2 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 20px;
             text-align: center;
-            padding: 40px;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 10px;
         }
-        .avatar {
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh;
+        }
+        #hero .avatar {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             border: 4px solid #007bff;
             margin-bottom: 20px;
         }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+        #hero h1 {
+            font-size: 3em;
+            margin: 0;
         }
-        .bio {
+        #hero .bio {
             font-size: 1.2em;
             color: #b0b0b0;
-            margin-bottom: 30px;
+            max-width: 600px;
+            margin: 10px auto 0;
         }
-        .links a {
+
+        /* --- About Me Section --- */
+        #about p {
+            font-size: 1.1em;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Projects Section --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .project-card {
+            background: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
+        }
+        .project-card h3 {
+            font-size: 1.5em;
+            color: #007bff;
+            margin-top: 0;
+        }
+        .project-card a {
             color: #007bff;
             text-decoration: none;
-            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            text-align: center;
+        }
+        .contact-links {
+            margin-top: 20px;
+        }
+        .contact-links a {
+            display: inline-block;
+            color: #fff;
+            background: #007bff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
             font-size: 1.1em;
+            margin: 10px;
+            transition: background 0.3s ease;
         }
-        .links a:hover {
-            text-decoration: underline;
+        .contact-links a:hover {
+            background: #0056b3;
         }
+        
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background: #1c1c1c;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            color: #888;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            #hero h1 {
+                font-size: 2.5em;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="avatar.png" alt="Success Joseph Avatar" class="avatar">
-        
-        <h1>Success Joseph</h1>
-        
-        <p class="bio">
-            Backend & Desktop Dev | Tech Educator | Student at MIVA Open University.
-            <br>
-            Automating tasks with Python. Learning C.
-        </p>
-        
-        <div class="links">
-            <a href="https://github.com/successjoseph" target="_blank">GitHub</a>
-            <a href="mailto:successjoseph67@gmail.com">Email</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Success Joseph</div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <img src="avatar.png" alt="Success Joseph Avatar" class="avatar">
+            <h1>Success Joseph</h1>
+            <p class="bio">
+                Backend & Desktop Dev | Tech Educator | Student at MIVA Open University.
+                <br>
+                Automating tasks with Python. Learning C.
+            </p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
             </div>
-    </div>
+            <p>
+                I'm a developer and tech educator passionate about building solutions that make life simpler. I love using technology to automate complex or stressful tasks, helping people focus on what truly matters. I'm always learning and looking for opportunities to contribute my skills to meaningful projects that have a positive, real-world impact.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project Name 1</h3>
+                    <p>A brief description of your project. What problem does it solve? What tech did you use?</p>
+                    <a href="[LINK_TO_YOUR_GITHUB_REPO]" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project Name 2</h3>
+                    <p>A brief description of your project. What problem does it solve? What tech did you use?</p>
+                    <a href="[LINK_TO_YOUR_GITHUB_REPO]" target="_blank">View on GitHub</a>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            <div class="contact-links">
+                <a href="mailto:successjoseph67@gmail.com">Email Me</a>
+                <a href="https://github.com/successjoseph" target="_blank">View GitHub</a>
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Success Joseph. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
